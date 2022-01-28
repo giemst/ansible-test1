@@ -24,5 +24,6 @@
     ansible.builtin.fetch:
       src: /home/centos/p_ansible.csv
       dest: /home/centos/p_ansible.csv
+      flat: yes
 
 
