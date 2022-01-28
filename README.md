@@ -71,24 +71,24 @@ OS user centos was used for testing.
 
 ### Executing program
 
-## Host: srvans1
+#### Host: srvans1
     
    * Change working directory to /home/centos/ansible-test1
    ```
     cd /home/centos/ansible-test1
    ```
 
-    * First step prepare table
+   * First step prepare table
    ```
     ansible-playbook p_createtable.py
    ```
 
-    * Start enerate random data and load into table 
+   * Start enerate random data and load into table 
    ```
     ansible-playbook p_gendata.py
    ```
 
-    * Extract 100 rows of data in csv format and put into /tmp/gathered_data.csv on srvans1 
+   * Extract 100 rows of data in csv format and put into /tmp/gathered_data.csv on srvans1 
    ```
     ansible-playbook p_getdata.py
    ```
