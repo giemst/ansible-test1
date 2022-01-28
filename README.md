@@ -39,28 +39,36 @@ OS user centos was used for testing.
     * Create database ORCLPDB1
     * Create user ansible, password ansible. Grant create table privilege and unlimited tablespace users.
 
-* Prepare srvans1 :
-    * edit /etc/hosts. All 3 VM's should be accessinle by hostname. 
-    * install ansible 
+* Prepare Ansible (srvans1) :
+    * Edit /etc/hosts. All 3 VM's should be accessinle by hostname. 
+    * Install ansible
+    ``` 
         $ sudo yum install epel-release
         $ sudo yum install ansible
+    ```    
     * donwload oracle client rpm's to /home/centos
     * generate SSH key and upload
+    ```
         $ ssh-keygen -t rsa
         $ ssh-copy-id srvapp1
         $ ssh-copy-id srvoradb1
+    ```
     * preparing project files on srvans1 :
+    ```
         $ cd /home/centos
         $ git clone (https://github.com/giemst/ansible-test1.git)
-
+    ```
     * Run ansible to update /etc/hosts on all the VM's
+    ```
         * cd /home/centos/ansible-test1
         * ansible-playbook hosts.yml
-
+    ```
     * Install oracle client,Python3, Python3-pip, cx_Oracle on srvapp1
+    ```
         * ansible-playbook oracle-client-installation.yml
         * ansible-playbook python_inst.yml
-
+    ```
+    
 ### Executing program
 
 Host: srvans1
