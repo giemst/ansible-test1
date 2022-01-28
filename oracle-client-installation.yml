@@ -1,6 +1,7 @@
 ---
 - name: upload oracle client to app server and do installation
   hosts: appservers
+  become: true
   remote_user: centos
 
   tasks:
