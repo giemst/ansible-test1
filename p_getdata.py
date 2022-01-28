@@ -4,7 +4,7 @@ import csv
 conn = cx_Oracle.connect("ansible/ansible@192.168.1.232:1521/ORCLPDB1")
 
 
-with open('p_ansible.csv', 'w', encoding='UTF8') as f:
+with open('/tmp/gathered_data.csv', 'w', encoding='UTF8') as f:
     writer = csv.writer(f)
 
     c = conn.cursor()

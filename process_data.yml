@@ -22,8 +22,8 @@
 
   - name: Store generated csv in /tmp/.....
     ansible.builtin.fetch:
-      src: /home/centos/p_ansible.csv
-      dest: /home/centos/p_ansible.csv
+      src: /tmp/gathered_data.csv
+      dest: /
       flat: yes
 
 
