@@ -80,7 +80,7 @@ OS user centos was used for testing.
 
     * Run playbook which create table, generate 1M randoom data, extract 100 rows of data in csv format and put into /tmp/gathered_data.csv on srvans1. 
     ```
-    ansible-playbook p_getdata.py
+    ansible-playbook process_data.yml
     ```
     * To check results examine content of file : /tmp/gathered_data.csv
 
