@@ -1,0 +1,30 @@
+---
+- name: upload oracle client to app server and do installation
+  hosts: appservers
+  remote_user: centos
+
+  tasks:
+  - name: Upload Oracle client basic rpm
+    ansible.builtin.copy:
+      src: /home/centos/oracle-instantclient-basic-21.5.0.0.0-1.x86_64.rpm
+      dest: /home/centos/oracle-instantclient-basic-21.5.0.0.0-1.x86_64.rpm
+      owner: centos
+      group: centos
+      mode: '0644'
+
+  - name: Upload Oracle client sqlplus rpm
+    ansible.builtin.copy:
+      src: /home/centos/oracle-instantclient-sqlplus-21.5.0.0.0-1.x86_64.rpm
+      dest: /home/centos/oracle-instantclient-sqlplus-21.5.0.0.0-1.x86_64.rpm
+      owner: centos
+      group: centos
+      mode: '0644'
+
+  - name: Install Oracle client basic rpm from a local file
+    yum:
+      name: /home/centos/oracle-instantclient-basic-21.5.0.0.0-1.x86_64.rpm
+      state: present
+-   name: Install Oracle client sqlplus rpm from a local file
+    yum:
+      name: /home/centos/oracle-instantclient-sqlplus-21.5.0.0.0-1.x86_64.rpm
+      state: present
