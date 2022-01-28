@@ -6,7 +6,7 @@ import cx_Oracle
 conn = cx_Oracle.connect("ansible/ansible@192.168.1.232:1521/ORCLPDB1")
 
 c = conn.cursor()
-dcn = 100000     # First commit at that number of rows
+dcn = 10000     # First commit at that number of rows
 
 for a in range(0, 100000):
     a_num1 =  ''.join(random.choice(string.digits) for i in range(15))
