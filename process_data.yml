@@ -4,20 +4,6 @@
   remote_user: centos
 
   tasks:
-  - name: Upload p_createtable.py
-    ansible.builtin.copy:
-      src: /home/centos/p_createtable.py
-      dest: /home/centos/p_createtable.py
-
-  - name: Upload p_gendata.py
-    ansible.builtin.copy:
-      src: /home/centos/p_gendata.py
-      dest: /home/centos/p_gendata.py
-
-  - name: Upload p_getdata.py
-    ansible.builtin.copy:
-      src: /home/centos/p_getdata.py
-      dest: /home/centos/p_getdata.py
 
   - name: Run p_createtable.py
     ansible.builtin.script: /home/centos/p_createtable.py
@@ -28,15 +14,15 @@
     ansible.builtin.script: /home/centos/p_gendata.py
     args:
       executable: python3
-
+      
   - name: Run p_getdata.py
     ansible.builtin.script: /home/centos/p_getdata.py
     args:
       executable: python3
 
-- name: Store generated csv in /tmp/.....
-  ansible.builtin.fetch:
-    src: /home/centos/p_ansible.csv
-    dest: /home/centos/p_ansible.csv
+  - name: Store generated csv in /tmp/.....
+    ansible.builtin.fetch:
+      src: /home/centos/p_ansible.csv
+      dest: /home/centos/p_ansible.csv
 
 
