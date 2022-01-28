@@ -1,6 +1,7 @@
 ---
 - name: install python3, python3-pip, cx_oracle
   hosts: appservers
+  become: true
   remote_user: centos
 
   tasks:
