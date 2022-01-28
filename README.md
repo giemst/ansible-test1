@@ -11,8 +11,8 @@ Test case to manage 3 servers environment using [Ansible](https://www.ansible.co
 Following software were used to setup environments :
 
 * [VirtualBox](https://virtualbox.org)
-* Oracle Database could be downloaded directly from oracle downloads [here](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
-* Oracle Instant Client Version could be downloaded directly from oracle downloads [here]](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
+* Oracle Database - binaries/rpm could be downloaded directly from [here](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html)
+* Oracle Instant Client - could be downloaded directly from [here](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html)
 
 ### Dependencies
 
@@ -56,7 +56,7 @@ OS user centos was used for testing.
     * preparing project files on srvans1 :
     ```
         cd /home/centos
-        git clone (https://github.com/giemst/ansible-test1.git)
+        git clone https://github.com/giemst/ansible-test1.git
     ```
     * Run ansible to update /etc/hosts on all the VM's
     ```
@@ -71,28 +71,28 @@ OS user centos was used for testing.
 
 ### Executing program
 
-    Host: srvans1
+## Host: srvans1
     
-   Change working directory to /home/centos/ansible-test1
+   * Change working directory to /home/centos/ansible-test1
    ```
     cd /home/centos/ansible-test1
    ```
 
-    First step prepare table
+    * First step prepare table
    ```
     ansible-playbook p_createtable.py
    ```
 
-    Start enerate random data and load into table 
+    * Start enerate random data and load into table 
    ```
     ansible-playbook p_gendata.py
    ```
 
-    Extract 100 rows of data in csv format and put into /tmp/gathered_data.csv on srvans1 
+    * Extract 100 rows of data in csv format and put into /tmp/gathered_data.csv on srvans1 
    ```
     ansible-playbook p_getdata.py
    ```
-   to check results examine content of file : /tmp/gathered_data.csv
+   * To check results examine content of file : /tmp/gathered_data.csv
 
 ## Authors
 
