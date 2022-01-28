@@ -1,7 +1,7 @@
 import cx_Oracle
 import csv  
 
-dsn_tns = cx_Oracle.makedsn('192.168.1.231', '1521', service_name='ORCLPDB1') 
+dsn_tns = cx_Oracle.makedsn('srvoradb1', '1521', service_name='ORCLPDB1') 
 conn = cx_Oracle.connect(user=r'ansible', password='ansible', dsn=dsn_tns)
 
 
