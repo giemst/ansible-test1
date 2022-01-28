@@ -6,17 +6,17 @@
   tasks:
 
   - name: Run p_createtable.py
-    ansible.builtin.script: /home/centos/p_createtable.py
+    ansible.builtin.script: /home/centos/ansible-test1/p_createtable.py
     args:
       executable: python3
 
   - name: Run p_gendata.py
-    ansible.builtin.script: /home/centos/p_gendata.py
+    ansible.builtin.script: /home/centos/ansible-test1/p_gendata.py
     args:
       executable: python3
-      
+
   - name: Run p_getdata.py
-    ansible.builtin.script: /home/centos/p_getdata.py
+    ansible.builtin.script: /home/centos/ansible-test1/p_getdata.py
     args:
       executable: python3
 
