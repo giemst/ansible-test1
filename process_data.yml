@@ -23,7 +23,7 @@
   - name: Store generated csv in /tmp/.....
     ansible.builtin.fetch:
       src: /tmp/gathered_data.csv
-      dest: /
+      dest: /tmp/
       flat: yes
 
 
