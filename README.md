@@ -1,6 +1,6 @@
-# Project Title
+# Home Work
 
-Simple Ansible functionality test.
+Ansible automation test.
 
 ## Description
 
@@ -30,7 +30,7 @@ OS user centos was used for testing.
 ### Installing
 
 * Setup 3 Linux VM's. Disable firewall, set folowing hostnames : 
-    * srvans1 (ansible management server) 
+    * srvans1 (ansible server) 
     * srvapp1 (application server)
     * srboradb1 (oracle database server)
 
@@ -57,6 +57,16 @@ OS user centos was used for testing.
     ```
     cd /home/centos
     git clone https://github.com/giemst/ansible-test1.git
+    ```
+    * setup Ansible inventory on srvans1 :
+    ```
+    sudo tee -a /etc/ansible/hosts << EOF
+    [appservers]
+    srvapp1
+
+    [dbservers]
+    srvoradb1
+    EOF
     ```
     * Run ansible to update /etc/hosts on all the VM's
     ```
