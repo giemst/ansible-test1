@@ -79,7 +79,7 @@ OS user centos was used for testing.
     ansible-playbook python_inst.yml
     ```
 
-### Executing program
+### Executing test
 
 * Host: srvans1
 
